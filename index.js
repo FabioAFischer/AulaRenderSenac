@@ -20,6 +20,14 @@ app.get("/users", async (req, res) => {
 
 })
 
+app.get("/users/:id", async (res,res) => {
+    const {id} = await prisma.user.findUnique({where: { id: Number(id) } })
+    if(!user){
+        return res.status(400).json({   error: "usuario não encontrado"});
+    }
+    res.json(user);
+});
+
 app.listen(3000, ()=>{
     console.log("Server em localhost:3000")
 })
