@@ -29,7 +29,7 @@ app.get("/users/:id", async (req,res) => {
 });
 
 app.get("/health", async (req, res) => {
-    res;status(200).json({ status: "ok", uptime: process.uptime() })
+    res.status(200).json({ status: "ok", uptime: process.uptime() })
     res.json(users);
 
 })
