@@ -20,7 +20,7 @@ app.get("/users", async (req, res) => {
 
 })
 
-app.get("/users/:id", async (res,res) => {
+app.get("/users/:id", async (req,res) => {
     const {id} = await prisma.user.findUnique({where: { id: Number(id) } })
     if(!user){
         return res.status(400).json({   error: "usuario não encontrado"});
