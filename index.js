@@ -28,11 +28,10 @@ app.get("/users/:id", async (req,res) => {
     res.json(user);
 });
 
-app.get("/health", async (req, res) => {
-    res.status(200).json({ status: "ok", uptime: process.uptime() })
-    res.json(users);
+app.get("/health", (req, res) => {
+    res.status(200).json({ status: "ok", uptime: process.uptime() });
+});
 
-})
 
 app.listen(3000, ()=>{
     console.log("Server em localhost:3000")
